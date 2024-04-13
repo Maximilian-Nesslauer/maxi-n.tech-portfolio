@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-background: #163056;
+    --text-color: #fff;
+    --text-light: #ccc;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--text-color);
+}

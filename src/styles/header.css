@@ -1,0 +1,48 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background: #1668c5;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 15px;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3783ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
