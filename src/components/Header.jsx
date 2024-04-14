@@ -21,7 +21,7 @@ export default function HeaderComponent() {
     <header>
       <div className={isActive ? "header-container active" : "header-container"}>
         <div className="header-title">
-          <h1>Maxi Neßlauer</h1>
+          <h1>Maximilian Neßlauer</h1>
           <p>Computer Science Student | Technology Enthusiast</p>
         </div>
         <nav className="navbar" role="navigation" aria-label="Main navigation">
