@@ -8,7 +8,6 @@
 
 .header-container.active {
   justify-content: center;
-  padding-top: 0.5rem;
 }
 
 .header-title {
@@ -17,11 +16,7 @@
 }
 
 .header-container.active .header-title {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
-  transform: translateY(-10px);
+  display: none;
 }
 
 .navbar {
@@ -34,6 +29,14 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.navbar.centered {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-top: 1rem;
+  transform: translateX(-50%);
+  justify-content: center;
+}
 
 .nav-link {
   color: white;
@@ -65,5 +68,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .navbar.centered {
+    flex-basis: auto;
   }
 }
