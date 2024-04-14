@@ -17,13 +17,10 @@ body {
     padding: 0;
 }
 
-.section {
-    padding: 2rem;
-}
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 20px;
     background-color: rgba(28, 69, 135, 0.7);
     border-radius: 10px;
