@@ -17,6 +17,18 @@ body {
     padding: 0;
 }
 
+.intro p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(28, 69, 135, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
 @media (max-width: 768px) {
     body {
         font-size: 16px; /* Slightly smaller font size on smaller screens */
