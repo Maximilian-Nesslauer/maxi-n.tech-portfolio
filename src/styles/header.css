@@ -3,15 +3,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, padding 0.3s ease;
 }
 
 .header-container.active {
   justify-content: center;
+  padding-top: 0.5rem;
 }
 
 .header-title {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
 }
 
 .header-container.active .header-title {
@@ -19,6 +21,7 @@
   visibility: hidden;
   position: absolute;
   pointer-events: none;
+  transform: translateY(-10px);
 }
 
 .navbar {
@@ -28,7 +31,7 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 
