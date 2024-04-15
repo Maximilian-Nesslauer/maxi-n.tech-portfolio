@@ -4,7 +4,7 @@ import '../styles/header.css';
 export default function HeaderComponent() {
   const [isActive, setIsActive] = useState(false);
   const headerRef = useRef(null);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const headerVisible = headerRef.current && headerRef.current.getBoundingClientRect().top >= 0;
@@ -19,9 +19,16 @@ export default function HeaderComponent() {
 
   const handleNavLinkClick = (event, targetId) => {
     event.preventDefault();
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+    
+    // Determine if the user is on the homepage
+    if (window.location.pathname === '/') {
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on the homepage, redirect and then scroll
+      window.location.href = '/' + '#' + targetId;
     }
   };
 
