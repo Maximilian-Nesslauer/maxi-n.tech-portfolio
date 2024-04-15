@@ -1,0 +1,42 @@
+---
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximilian Neßlauer</title>
+    <meta name="description" content="Maximilian Neßlauer's personal website showcasing projects and skills in computer science and software development.">
+
+    <script src="https://kit.fontawesome.com/a0e0124531.js" crossorigin="anonymous" is:inline></script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Maximilian Neßlauer - Computer Science Student">
+    <meta property="og:description" content="Explore Maximilian Neßlauer's website.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://https://www.maxi-n.tech/">
+    <meta property="og:site_name" content="Maximilian Neßlauer's Website">
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@Maxi_Nesslauer">
+    <meta name="twitter:title" content="Maximilian Neßlauer - Computer Science Student">
+    <meta name="twitter:description" content="Explore Maximilian Neßlauer's website">
+
+    <meta name="author" content="Maximilian Neßlauer, maxi@yourwebsite.com">
+    <meta name="keywords" content="Maximilian Neßlauer, Computer Science, Portfolio, Software Developer, Projects">
+</head>
+<body>
+    <Header client:load/>
+
+    <main style="min-height: calc(100vh - 120px)">
+        <slot />
+    </main>
+
+    <Footer />
+    <SpeedInsights/>
+</body>
+</html>
