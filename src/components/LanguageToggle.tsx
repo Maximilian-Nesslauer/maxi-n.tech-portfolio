@@ -4,10 +4,17 @@ import React, { useState } from 'react';
 const LanguageToggle: React.FC = () => {
     const [language, setLanguage] = useState('en');
 
-    const content: { [key: string]: string } = {
-        en: "Privacy policy content in English...",
-        de: "Datenschutzerklärung auf Deutsch..."
-    };
+    const EnglishContent = () => (
+        <div>
+            <p>Privacy policy content in English...</p>
+        </div>
+    );
+
+    const GermanContent = () => (
+        <div>
+            <p>Datenschutzerklärung auf Deutsch...</p>
+        </div>
+    );
 
     return (
         <div>
@@ -19,9 +26,9 @@ const LanguageToggle: React.FC = () => {
                     <button onClick={() => setLanguage('de')}>German</button>
                 </div>
             </div>
-            <p>{content[language]}</p>
+            {/* Conditionally render the appropriate content based on the current language */}
+            {language === 'en' ? <EnglishContent /> : <GermanContent />}
         </div>
-
     );
 };
 
