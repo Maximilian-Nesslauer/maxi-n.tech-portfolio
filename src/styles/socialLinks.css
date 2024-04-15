@@ -1,0 +1,8 @@
+.social-icons a {
+    margin: 0 10px;
+    color: var(--text-light);
+}
+
+.social-icons a:hover {
+    color: #3783ff;
+}
