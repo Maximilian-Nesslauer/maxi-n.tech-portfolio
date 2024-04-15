@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/header.css';
 
-export default function HeaderComponent() {
-  const [isActive, setIsActive] = useState(false);
-  const headerRef = useRef(null);
-  
+const HeaderComponent: React.FC = () => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const headerRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       const headerVisible = headerRef.current && headerRef.current.getBoundingClientRect().top >= 0;
@@ -17,17 +17,15 @@ export default function HeaderComponent() {
     };
   }, []);
 
-  const handleNavLinkClick = (event, targetId) => {
+  const handleNavLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string): void => {
     event.preventDefault();
     
-    // Determine if the user is on the homepage
     if (window.location.pathname === '/') {
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // If not on the homepage, redirect and then scroll
       window.location.href = '/' + '#' + targetId;
     }
   };
@@ -50,3 +48,5 @@ export default function HeaderComponent() {
     </header>
   );
 }
+
+export default HeaderComponent;
