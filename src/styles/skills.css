@@ -1,0 +1,13 @@
+.skills-list {
+    list-style: none;
+    padding: 1rem;
+}
+
+.skills-list li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.skills-list i {
+    margin-right: 10px;
+}

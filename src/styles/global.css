@@ -17,7 +17,6 @@ body {
     padding: 0;
 }
 
-
 .container {
     max-width: 800px;
     margin: 2rem auto;
@@ -25,15 +24,6 @@ body {
     background-color: rgba(28, 69, 135, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.social-icons a {
-    margin: 0 10px;
-    color: var(--text-light);
-}
-
-.social-icons a:hover {
-    color: #3783ff;
 }
 
 .intro p {
@@ -44,6 +34,6 @@ body {
 
 @media (max-width: 768px) {
     body {
-        font-size: 16px; /* Slightly smaller font size on smaller screens */
+        font-size: 16px;
     }
 }
