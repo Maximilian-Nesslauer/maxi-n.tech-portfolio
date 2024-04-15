@@ -26,8 +26,28 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.bigger-container {
+.privacy-policy-container {
     max-width: 95%;
+}
+
+.language-toggle {
+    text-align: right;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+button {
+    color: var(--text-light);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.4;
 }
 
 .intro p {
