@@ -1,0 +1,14 @@
+[
+    {
+      "title": "My Portfolio Website",
+      "description": "One of my first projects was this website. I built it using Astro, React, Typescript, Javascript, HTML and Tailwind CSS. The goal of creating this website was learning Astro, React and Typescript and showing off my projects.",
+      "githubLink": "https://github.com/Maximilian-Nesslauer/maxi-n.tech-portfolio",
+      "additionalLinks": [
+        {
+          "url": "https://maxi-n.tech",
+          "label": "maxi-n.tech hosted on vercel"
+        }
+      ]
+    }
+]
+  
