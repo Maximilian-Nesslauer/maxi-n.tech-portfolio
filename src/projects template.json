@@ -11,7 +11,9 @@
         "url": "https://project1demo.com",
         "label": "Live Demo"
       }
-    ]
+    ],
+    "status": "Active",
+    "statusColor": "green"
   },
   {
     "title": "Project 2",
@@ -24,6 +26,8 @@
         "url": "https://project2demo.com",
         "label": "Live Demo"
       }
-    ]
+    ],
+    "status": "Maintenance",
+    "statusColor": "yellow"
   }
 ]
