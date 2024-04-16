@@ -23,7 +23,9 @@ const HeaderComponent: React.FC = () => {
     if (window.location.pathname === '/') {
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        const offset = 80;
+        const topOffset = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
       }
     } else {
       window.location.href = '/' + '#' + targetId;
