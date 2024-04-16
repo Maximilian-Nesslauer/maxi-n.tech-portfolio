@@ -29,31 +29,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   status,
   statusColor
 }) => {
-  const [lastCommit, setLastCommit] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchLastCommit = async () => {
-      if (githubLink) {
-        console.log("Fetching last commit for:", githubLink); // Debug log
-        try {
-          const repo = new URL(githubLink).pathname.substring(1);
-          const response = await fetch(`/api/lastCommit?repo=${repo}`);
-          const data = await response.json();
-          if (response.ok) {
-            console.log("Last commit data:", data); // Debug log
-            setLastCommit(data.date);
-          } else {
-            console.error('Failed to fetch last commit:', data.error);
-          }
-        } catch (error) {
-          console.error('Error fetching last commit data:', error);
-        }
-      }
-    };
-  
-    fetchLastCommit();
-  }, [githubLink]);
-  
 
   return (
     <div className="project-card">
@@ -62,11 +37,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="status-indicator">
           <span className="status-dot" style={{ backgroundColor: statusColor }}></span>
           {status}
-        </div>
-      )}
-      {lastCommit && (
-        <div className="last-commit">
-          Last commit: {lastCommit}
         </div>
       )}
       <p>{description}</p>
