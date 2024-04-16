@@ -8,7 +8,9 @@
           "url": "https://maxi-n.tech",
           "label": "maxi-n.tech hosted on vercel"
         }
-      ]
+      ],
+      "status": "Active",
+      "statusColor": "green"
     }
 ]
   
