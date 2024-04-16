@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         try {
           // Extract the repo name from the GitHub link
           const repo = new URL(githubLink).pathname.substring(1);  // Assumes URL is like "https://github.com/user/repo"
-          const response = await fetch(`/api/lastCommit?repo=${repo}`);
+          const response = await fetch(`/api/github/lastCommit?repo=${repo}`);
           const data = await response.json();
           if (response.ok) {
             setLastCommit(data.date);
