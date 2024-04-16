@@ -34,12 +34,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   useEffect(() => {
     const fetchLastCommit = async () => {
       if (githubLink) {
+        console.log("Fetching last commit for:", githubLink); // Debug log
         try {
-          // Extract the repo name from the GitHub link
-          const repo = new URL(githubLink).pathname.substring(1);  // Assumes URL is like "https://github.com/user/repo"
+          const repo = new URL(githubLink).pathname.substring(1);
           const response = await fetch(`/api/lastCommit?repo=${repo}`);
           const data = await response.json();
           if (response.ok) {
+            console.log("Last commit data:", data); // Debug log
             setLastCommit(data.date);
           } else {
             console.error('Failed to fetch last commit:', data.error);
@@ -49,9 +50,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         }
       }
     };
-
+  
     fetchLastCommit();
-  }, [githubLink]);  // Dependency array to re-fetch when githubLink changes
+  }, [githubLink]);
+  
 
   return (
     <div className="project-card">
