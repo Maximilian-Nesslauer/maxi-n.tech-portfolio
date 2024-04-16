@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Project 1",
+    "description": "Description of Project 1",
+    "githubLink": "https://github.com/yourgithub/project1",
+    "imageSrc": "/public/assets/project1.png",
+    "imageAlt": "Screenshot of Project 1",
+    "videoSrc": "/public/assets/project1.mp4",
+    "additionalLinks": [
+      {
+        "url": "https://project1demo.com",
+        "label": "Live Demo"
+      }
+    ]
+  },
+  {
+    "title": "Project 2",
+    "description": "Description of Project 2",
+    "githubLink": "https://github.com/yourgithub/project2",
+    "imageSrc": "/public/assets/project2.png",
+    "imageAlt": "Screenshot of Project 2",
+    "additionalLinks": [
+      {
+        "url": "https://project2demo.com",
+        "label": "Live Demo"
+      }
+    ]
+  }
+]
