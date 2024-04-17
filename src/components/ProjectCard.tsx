@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   statusColor,
   fetchLastCommit
 }) => {
-  const [lastCommit, setLastCommit] = useState<string>('');
+  const [lastCommit, setLastCommit] = useState<string>('Unavailable');
 
   useEffect(() => {
     const fetchCommit = async () => {
@@ -49,7 +49,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         }
       }
     };
-    
 
     fetchCommit();
   }, [githubLink, fetchLastCommit]);
