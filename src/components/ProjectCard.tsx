@@ -18,7 +18,6 @@ interface ProjectCardProps {
   statusColor?: string;
   fetchLastCommit?: boolean;
 }
-
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
@@ -44,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           if (!response.ok) throw new Error('Failed to fetch commit data');
           const data = await response.json();
           if (data && data.length > 0) {
-            setLastCommit(new Date(data[0].commit.author.date).toLocaleDateString());
+            setLastCommit(new Date(data[0].commit.author.date).toLocaleString());
           }
         } catch (error) {
           console.error('Error fetching last commit:', error);
@@ -66,11 +65,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {status}
         </div>
       )}
-      {lastCommit && (
-        <div className="last-commit">
-          Last Commit: {lastCommit}
-        </div>
-      )}
       <p>{description}</p>
       {imageSrc && <img src={imageSrc} alt={imageAlt || 'Project Image'} />}
       {videoSrc && <video src={videoSrc} controls />}
@@ -83,6 +77,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {link.label}
         </a>
       ))}
+      {lastCommit && (
+        <div className="last-commit">
+          Last Commit: {lastCommit}
+        </div>
+      )}
     </div>
   );
 };
