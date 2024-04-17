@@ -11,6 +11,13 @@
       ],
       "status": "Active",
       "statusColor": "green"
+    },
+    {
+      "title": "Discord AI Bot",
+      "description": "I am currently developing a Discord bot that is designed to use a LLM (Large Language Model) to chat with users. The bot is written in Python.",
+      "githubLink": "https://github.com/Maximilian-Nesslauer/discord-ai-bot",
+      "status": "Development",
+      "statusColor": "orange"
     }
 ]
   
