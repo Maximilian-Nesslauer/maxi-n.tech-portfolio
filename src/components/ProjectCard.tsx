@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import "../styles/projects.css";
 
 interface Link {
@@ -15,6 +16,7 @@ interface ProjectCardProps {
   additionalLinks?: Link[];
   status?: string;
   statusColor?: string;
+  fetchLastCommit?: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -26,8 +28,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   videoSrc,
   additionalLinks,
   status,
-  statusColor
+  statusColor,
+  fetchLastCommit
 }) => {
+  const [lastCommit, setLastCommit] = useState<string>('');
+
+  useEffect(() => {
+    const fetchCommit = async () => {
+      if (githubLink && fetchLastCommit) {
+        try {
+          const apiUrl = `${githubLink.replace('https://github.com', 'https://api.github.com/repos')}/commits?per_page=1`;
+          const response = await fetch(apiUrl, {
+            headers: { 'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}` }
+          });
+          if (!response.ok) throw new Error('Failed to fetch commit data');
+          const data = await response.json();
+          if (data && data.length > 0) {
+            setLastCommit(new Date(data[0].commit.author.date).toLocaleDateString());
+          }
+        } catch (error) {
+          console.error('Error fetching last commit:', error);
+          setLastCommit('Unavailable');
+        }
+      }
+    };
+    
+
+    fetchCommit();
+  }, [githubLink, fetchLastCommit]);
 
   return (
     <div className="project-card">
@@ -36,6 +64,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="status-indicator">
           <span className="status-dot" style={{ backgroundColor: statusColor }}></span>
           {status}
+        </div>
+      )}
+      {lastCommit && (
+        <div className="last-commit">
+          Last Commit: {lastCommit}
         </div>
       )}
       <p>{description}</p>
