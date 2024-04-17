@@ -1,0 +1,6 @@
+# Allow all robots complete access
+User-agent: *
+Disallow:
+
+# Sitemap URL
+Sitemap: https://www.maxi-n.tech/sitemap-index.xml
