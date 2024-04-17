@@ -17,6 +17,9 @@ interface Project {
     url: string;
     label: string;
   }[];
+  status?: string;
+  statusColor?: string;
+  fetchLastCommit?: boolean;
 }
 
 const projectsData: Project[] = projects;
@@ -28,7 +31,7 @@ import '../styles/global.css';
 <MainLayout>
 
     <section class="intro, container">
-        <h class="font-bold text-2xl">Hello! I'm Maximilian Neßlauer</h>
+        <h1 class="font-bold text-2xl">Hello! I'm Maximilian Neßlauer</h1>
         <p class="pt-2">I am a 20-year-old Computer Science student passionate about solving real-world problems using technology.
             My journey in programming started with a friend showing me his projects and introducing me to Codecademy
             and TeamTreehouse.
