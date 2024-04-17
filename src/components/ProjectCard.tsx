@@ -37,9 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       if (githubLink && fetchLastCommit) {
         try {
           const apiUrl = `${githubLink.replace('https://github.com', 'https://api.github.com/repos')}/commits?per_page=1`;
-          const response = await fetch(apiUrl, {
-            headers: { 'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}` }
-          });
+          const response = await fetch(apiUrl);
           if (!response.ok) throw new Error('Failed to fetch commit data');
           const data = await response.json();
           if (data && data.length > 0) {
