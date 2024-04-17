@@ -1,0 +1,55 @@
+.privacy-policy-container {
+    max-width: 95%;
+}
+
+.language-toggle {
+    text-align: right;
+    right: 0;
+    top: 0;
+}
+
+button {
+    color: var(--text-light);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.4;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+p, li {
+    margin-bottom: 10px
+}
+
+ul {
+    padding-left: 20px;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+address {
+    font-style: normal;
+    padding: 10px 0;
+}
