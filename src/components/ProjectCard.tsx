@@ -36,13 +36,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     const fetchCommit = async () => {
       if (githubLink && fetchLastCommit) {
         try {
-          const apiUrl = `${githubLink.replace('https://github.com', 'https://api.github.com/repos')}/commits?per_page=1`;
-          const response = await fetch(apiUrl);
+          const apiUrl = `${githubLink.replace('https://github.com', 'https://api.github.com/repos')}/commits/main?per_page=1`;
+          const response = await fetch(apiUrl, {
+            headers: new Headers({
+              'Authorization': `token ${import.meta.env.PUBLIC_APP_GITHUB_TOKEN}`
+            })
+          });
           if (!response.ok) throw new Error('Failed to fetch commit data');
           const data = await response.json();
-          if (data && data.length > 0) {
-            setLastCommit(new Date(data[0].commit.author.date).toLocaleString());
-          }
+          setLastCommit(new Date(data.commit.author.date).toLocaleString());
         } catch (error) {
           console.error('Error fetching last commit:', error);
           setLastCommit('Unavailable');
