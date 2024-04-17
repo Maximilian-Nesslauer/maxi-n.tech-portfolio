@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import "../styles/projects.css";
 
 interface Link {
