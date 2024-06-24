@@ -5,6 +5,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 
 import ProjectCard from "../components/ProjectCard.tsx";
 import projects from "../projects.json"
+
 // Ensure TypeScript understands the project structure
 interface Project {
   title: string;
@@ -24,12 +25,10 @@ interface Project {
 
 const projectsData: Project[] = projects;
 
-
 import '../styles/global.css';
 ---
 
 <MainLayout>
-
     <section class="intro, container">
         <h1 class="font-bold text-2xl">Hello! I'm Maximilian Neßlauer</h1>
         <p class="pt-2">I am a 20-year-old Computer Science student passionate about solving real-world problems using technology.
@@ -41,7 +40,7 @@ import '../styles/global.css';
         <h1 class="font-bold text-2xl">My Projects</h1>
         <div>
             {projectsData.map(project => (
-            <ProjectCard client:only {...project}/>
+                <ProjectCard client:only="react" {...project}/>
             ))}
         </div>
     </section>
