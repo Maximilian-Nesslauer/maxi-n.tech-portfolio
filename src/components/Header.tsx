@@ -43,7 +43,6 @@ const HeaderComponent: React.FC = () => {
           <a href="#home" className="nav-link" aria-current="page" onClick={(e) => handleNavLinkClick(e, 'home')}>Home</a>
           <a href="#projects" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'projects')}>Projects</a>
           <a href="#skills" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'skills')}>Skills</a>
-          <a href="#education" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'education')}>Education</a>
           <a href="#contact" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'contact')}>Contact</a>
         </nav>
       </div>
